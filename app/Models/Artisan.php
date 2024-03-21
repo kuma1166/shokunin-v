@@ -18,4 +18,14 @@ class Artisan extends Model
     {
         return $this->belongsToMany(Package::class);
     }
+
+    public function get_artisans()
+    {
+        return $this->belongsToMany(Artisan::class);
+    }
+
+    public function get_sushi_artisans()
+    {
+        return $this->belongsToMany(SushiArtisan::class);
+    }
 }

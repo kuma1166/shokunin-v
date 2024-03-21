@@ -12,7 +12,8 @@ class ArtisanController extends Controller
      */
     public function index()
     {
-        //
+        $artisans = Artisan::all();
+        return view('index', ['artisans' => $artisans]);
     }
 
     /**

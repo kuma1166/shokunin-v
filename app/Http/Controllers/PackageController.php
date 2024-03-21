@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artisan;
+use App\Models\SushiArtisan;
 use App\Models\Package;
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -15,6 +16,12 @@ class PackageController extends Controller
      */
     public function index()
     {
+        $artisans = Artisan::orderBy('id')
+            ->get();
+
+        $sushi_artisans = SushiArtisan::orderBy('id')
+            ->get();
+
         $types = Type::orderBy('id')
             ->get();
 
@@ -62,7 +69,7 @@ class PackageController extends Controller
             ->orderByRaw('packages.id , types.id asc')
             ->get();
 
-        return view('index', compact('types', 'recommends', 'recommendTypes', 'packages', 'packageTypes'));
+        return view('index', compact('artisans', 'sushi_artisans', 'types', 'recommends', 'recommendTypes', 'packages', 'packageTypes'));
     }
 
     /**

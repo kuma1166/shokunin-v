@@ -20,7 +20,7 @@
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
-                        <a href="{{ url('/packages') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                        <a href="{{ url('top') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Main top</a>
                     @else
                         <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
@@ -130,4 +130,46 @@
             </div>
         </div>
     </body>
+
+{{-- ChatBot用 --}}
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
+<style>
+    /* ウィジェットの背景色を指定 */
+    .widget-container {
+        background-color: #ffffff; /* 例: 白色 */
+    }
+
+    /* ウィジェットヘッダーの背景色を指定 */
+    .header-container {
+        background-color: #3366ff; /* 例: 青色 */
+    }
+
+    /* ウィジェットヘッダーテキストの色を指定 */
+    .header-container h4 {
+        color: #ffffff; /* 例: 白色 */
+    }
+</style>
+<script>
+    var botmanWidget = {
+        title: 'SHOKUNIN Support',
+        userID: 'Yuma',
+        aboutText: 'Start the conversation with Hi',
+        introMessage: "WELCOME TO ALL ABOUT SHOKUNIN"
+    };
+</script>
+
+<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </html>
+
+    {{-- ChatBot用 --}}
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css"> --}}
+    <script>
+        var botmanWidget = {
+            title: 'SHOKUNIN Support',
+            userID: 'Yuma',
+            aboutText: 'Start the conversation with Hi',
+            introMessage: "WELCOME TO ALL ABOUT SHOKUNIN"
+        };
+    </script>
+
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>

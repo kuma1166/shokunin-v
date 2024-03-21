@@ -1,3 +1,4 @@
+{{-- <x-app-layout>のコンポーネントとして使用 --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -7,6 +8,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+
+{{-- Chatbot用 --}}
+<style>
+@media (max-width: 768px) { /* Tailwindのsmブレークポイントに相当 */
+    .botman-chat-widget-container {
+        position: fixed!important;
+        bottom: 0!important;
+        left: 0!important;
+        width: 100%!important;
+        height: 50%!important; /* 画面の下半分に表示 */
+        z-index: 9999!important;
+    }
+}
+</style>
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -29,8 +45,12 @@
             </header>
         @endif
 
+
         <!-- Page Content -->
-        <main>
+        {{-- <main>
+            {{ $slot }}
+        </main> --}}
+        <main class="bg-cover bg-center" style="background-image: url('{{ url('/storage/japanese-paper.jpg') }}');">
             {{ $slot }}
         </main>
 

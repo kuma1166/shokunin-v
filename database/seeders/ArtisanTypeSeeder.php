@@ -19,7 +19,7 @@ class ArtisanTypeSeeder extends Seeder
         ]);
         DB::table('artisan_type')->insert([
             'artisan_id' => 2,
-            'type_id' => 2,
+            'type_id' => 3,
         ]);
         DB::table('artisan_type')->insert([
             'artisan_id' => 3,
@@ -30,8 +30,8 @@ class ArtisanTypeSeeder extends Seeder
             'type_id' => 4,
         ]);
         DB::table('artisan_type')->insert([
-            'artisan_id' => 1,
-            'type_id' => 4,
+            'artisan_id' => 5,
+            'type_id' => 2,
         ]);
     }
 }

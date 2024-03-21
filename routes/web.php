@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\TopController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BotManController; //ChatBot
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/top', [TopController::class, 'top'])->name('top');
 
 Route::get('/packages', function () {
     return view('packages');
@@ -36,5 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::post('reservations/store', [ReservationController::class, 'store'])->name('reservations.store');
     Route::get('reservations/check', [ReservationController::class, 'check'])->name('reservations.check');
 });
+
+// ChatBot
+Route::match(['get', 'post'], '/botman', 'App\Http\Controllers\BotManController@handle');
 
 require __DIR__ . '/auth.php';

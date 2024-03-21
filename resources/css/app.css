@@ -28,6 +28,10 @@ header {
     color: #fffff1;
 }
 
+.top-color-red {
+    background-color: #280808;
+}
+
 /* 各ページの設定 */
 #content {
     background-color: rgba(0, 0, 0, 0.4);
@@ -50,6 +54,15 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.maintop-image {
+    width: auto;
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .pkg-img-area {
     width: 45%;
 }
@@ -133,3 +146,4 @@ header {
     box-shadow: 2px 2px 4px rgb(245, 213, 101, 0.4);
 }
 
+/* chatbot */
