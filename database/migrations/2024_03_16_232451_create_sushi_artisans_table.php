@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
+            $table->string('image2');
             $table->text('description')->nullable();
             $table->text('career')->nullable();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

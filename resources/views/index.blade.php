@@ -20,10 +20,9 @@
     <div id="scroll" class="mx-2 my-2 flex">
         @foreach ($sushi_artisans as $sushi_artisan)
             <div class="w-1/3">
-                {{-- 画像クリックで職人詳細ページへ --}}
-                {{-- <a href="{{ route('sushi_artisan.show', $sushi_artisan->id) }}">  --}}
+                {{-- <a href="{{ route('sushi_artisan.show', $sushi_artisan->id) }}"> --}} <a href="{{ route('sushi_artisan.show', $sushi_artisan->id) }}">
                     <img class="w-full" src="{{ asset('storage/' . $sushi_artisan->image) }}" alt="">
-                {{-- </a> --}}
+                </a>
             </div>
         @endforeach
     </div>

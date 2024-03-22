@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\SushiArtisanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,8 @@ Route::get('/top', [TopController::class, 'top'])->name('top');
 Route::get('/packages', function () {
     return view('packages');
 })->middleware(['auth', 'verified'])->name('packages');
+
+Route::get('/sushi_artisan/{id}', [SushiArtisanController::class, 'show'])->name('sushi_artisan.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
