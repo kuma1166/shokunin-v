@@ -96,6 +96,8 @@ class PackageController extends Controller
         $packageArtisans = Package::with('get_artisans')->find($package->id);
         $artisans = $packageArtisans->get_artisans;
 
+        $sushi_artisans = SushiArtisan::select('id', 'name')->get();
+
         $artisanIds = array();
         for ($i = 0; $i < count($artisans); $i++) {
             $artisanIds[] = $artisans[$i]->id;
@@ -108,7 +110,7 @@ class PackageController extends Controller
             ->select('types.name', 'types.icon', 'types.image')
             ->get();
 
-        return view('show', compact('package', 'artisanTypes'));
+        return view('show', compact('package', 'sushi_artisans', 'artisanTypes'));
     }
 
     /**
