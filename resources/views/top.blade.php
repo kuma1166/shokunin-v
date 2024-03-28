@@ -25,7 +25,7 @@
         <div class="maintop-image" style="background-image: url({{ url('/storage/shutterstock_1543757588.jpg') }})">
             <div class="flex items-center justify-center items-end h-2/3">
                 <a href="{{ route('packages.index') }}">
-                    <button class="px-9 py-3 " method="GET" action="{{ route('packages.search') }}">Let's start WOW!!</button>
+                    <button class="px-9 py-3 ">Let's start WOW!!</button>
                 </a>
             </div>
         </div>

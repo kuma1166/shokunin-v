@@ -15,7 +15,7 @@
     </div>
 
     <div class="bg-color-red">
-        Sushi Craftsmen
+        Sushi Chef
     </div>
     <div id="scroll" class="mx-2 my-2 flex">
         @foreach ($sushi_artisans as $sushi_artisan)
@@ -33,7 +33,7 @@
     </div> --}}
 
     <div class="bg-color-red">
-        Japanese Craftsmen Category
+        Japanese Craftsperson Category
     </div>
     <div id="scroll" class="mx-2 my-2 flex">
         @foreach ($types as $type)
@@ -56,7 +56,7 @@
                 <h1 class="my-1 text-base font-bold">{{ $recommend->name }}</h1>
 
                 <div class="my-1 text-xs">
-                    Adult {{ $recommend->adult_price }} yen（Child {{ $recommend->child_price }} yen）
+                    Adult {{ $recommend->adult_price }} JPY（Child {{ $recommend->child_price }} JPY）
                 </div>
 
                 <div class="flex flex-wrap">
@@ -106,7 +106,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="text-xs">Adult {{ $package->adult_price }} yen（Child {{ $package->child_price }} yen）</div>
+            <div class="text-xs">Adult {{ $package->adult_price }} JPY（Child {{ $package->child_price }} JPY）</div>
             <div class="flex my-3">
                 <div class="pkg-img-area">
                     <img src="{{ asset('storage/' . $package->image) }}" alt="パッケージ画像" class="pkg-img">
@@ -155,8 +155,8 @@
             mainColor: '#b9a157',
             bubbleBackground: '#b9a157',
             introMessage: "Hello.<br>Welcome to SHOKUNIN app.<br>Tell us about your problem or question.",
-            frameHeight: '50%',
-            mobileHeight: '50%',
+            frameHeight: '100%',
+            mobileHeight: '100%',
         };
     </script>
 
