@@ -18,5 +18,4 @@ class SushiArtisanController extends Controller
         $sushi_artisan = SushiArtisan::findOrFail($id);
         return view('sushi_artisan_detail', compact('sushi_artisan'));
     }
-
 }

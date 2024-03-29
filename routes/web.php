@@ -3,6 +3,7 @@
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\SushiArtisanController;
+use App\Http\Controllers\SushiArtisanSelectController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OrderConfirmationEmailController;
 use Illuminate\Support\Facades\Route;

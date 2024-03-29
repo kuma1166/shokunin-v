@@ -50,7 +50,7 @@
 
 
     <div>
-    <h2>Selected Sushi Artisan</h2>
+    <h2>Sushi chef</h2>
     <p>{{ $sushiArtisanName }}</p>
 </div>
 
@@ -62,7 +62,7 @@
                 <td class="px-4 py-2 font-medium">{{ $date }}</td>
             </tr>
             <tr class="border-b">
-                <td class="px-4 py-2">Number of People</td>
+                <td class="px-4 py-2">Number of participants</td>
                 <td class="px-4 py-2 font-medium">{{ $number }}</td>
             </tr>
             <tr class="border-b">
