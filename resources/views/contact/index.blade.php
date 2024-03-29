@@ -33,7 +33,7 @@
         </div>
 
         <div class="mb-4">
-            <label for="number" class="block text-gray-700 text-sm font-bold mb-2">Number of People<span class="text-red-500"> indispensable</span></label>
+            <label for="number" class="block text-gray-700 text-sm font-bold mb-2">Number of participants<span class="text-red-500"> indispensable</span></label>
             <input id="number" type="number" name="number" value="{{ old('number') }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             @error('number')
             <p class="text-red-500 text-xs italic">{{ $message }}</p>

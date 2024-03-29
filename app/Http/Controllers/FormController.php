@@ -65,7 +65,7 @@ class FormController extends Controller
         $data = $request->all();
 
         Mail::to($request->user())->send(new UserConfirmationMail($data));
-        Mail::to('onion1009@icloud.com')->send(new AdminNotificationMail($data));
+        Mail::to('shokunin.lab16@gmail.com')->send(new AdminNotificationMail($data));
 
         return view('contact.complete');
     }
