@@ -17,7 +17,7 @@
         </div>
       @endforeach
     </div>
-    <div class="text-xs">Adult {{ $package->adult_price }} yen（Child {{ $package->child_price }} yen）</div>
+    <div class="text-xs">Adult {{ $package->adult_price }} JPY（Child {{ $package->child_price }} JPY）</div>
     <div class="flex my-3">
       <div class="pkg-img-area pr-4">
         <img src="{{ asset('storage/' . $package->image) }}"  alt="パッケージ画像" class="pkg-img">

@@ -5,7 +5,7 @@
             <div class="flex border-b border-white">
                 <div class="text-xs border-r border-white w-1/2 h-8">
                     <div class="h-full w-full flex items-center justify-center">
-                        <div>about</div>
+                        <div>About</div>
                     </div>
                 </div>
                 <div class="text-xs w-1/2 h-8">
