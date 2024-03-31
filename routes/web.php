@@ -23,16 +23,17 @@ Route::get('/packages', function () {
     return view('packages');
 })->middleware(['auth', 'verified'])->name('packages');
 
-Route::get('/sushi_artisan/{id}', [SushiArtisanController::class, 'show'])->name('sushi_artisan.show');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/packages', [PackageController::class, 'index'])->name('packages.index');
     Route::get('/packages/{package}', [PackageController::class, 'show'])->name('packages.show');
+    Route::get('/packages_decision/{package_id}/{sushi_artisan_id}', [PackageController::class, 'decision'])->name('packages.decision');
     Route::get('/package/search', [PackageController::class, 'search'])->name('packages.search');
     Route::get('/package/check', [PackageController::class, 'check'])->name('packages.check');
+    Route::get('/sushi_artisan_show/{id}', [SushiArtisanController::class, 'show'])->name('sushi_artisan.show');
+    Route::get('/sushi_artisan_select/{package_id}/{sushi_artisan_id}', [SushiArtisanController::class, 'select'])->name('sushi_artisan.select');
     // Route::get('reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
     // Route::post('reservations/store', [ReservationController::class, 'store'])->name('reservations.store');
     // Route::get('reservations/check', [ReservationController::class, 'check'])->name('reservations.check');
