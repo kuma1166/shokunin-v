@@ -29,7 +29,7 @@ class FormController extends Controller
             'company' => 'nullable',
             'FirstName' => 'required',
             'LastName' => 'required',
-            'phone' => 'nullable|integer',
+            'phone' => 'nullable|regex:/^(\+?\d{1,3}[- ]?)?\d{10}$/',
             'email' => 'required|email',
             'allergy' => 'nullable',
             'body' => 'nullable',
@@ -71,24 +71,3 @@ class FormController extends Controller
     }
 
 }
-
-
-        // $data = $request->validate([
-            // 'date' => 'required|date',
-            // 'number' => 'required|integer',
-            // 'company' => 'nullable',
-            // 'FirstName' => 'required',
-            // 'LastName' => 'required',
-            // 'phone' => 'nullable|integer',
-            // 'email' => 'required|email',
-            // 'allergy' => 'nullable',
-            // 'body' => 'nullable',
-
-        // $date = $request->input('date');
-        // $number = $request->input('number');
-        // $packageName = $request->input('packageName');
-        // $adultPrice = $request->input('adultPrice');
-        // $childPrice = $request->input('childPrice');
-        // $image = $request->input('image');
-        // $description = $request->input('description');
-        // $plan = $request->input('plan');

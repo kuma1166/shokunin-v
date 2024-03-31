@@ -49,10 +49,10 @@
     </div>
 
 
-    <div>
+    {{-- <div>
     <h2>Sushi chef</h2>
     <p>{{ $sushiArtisanName }}</p>
-</div>
+</div> --}}
 
 </div>
     <table class="table-auto w-full">
@@ -92,7 +92,7 @@
         </tbody>
     </table>
     <div class="flex items-center justify-between py-8">
-        <button type="submit" name="submitBtnVal" value="confirm" class="return_btn py-2 px-4 rounded focus:outline-none focus:shadow-outline">Checkout</button>
+        <button type="submit" name="submitBtnVal" value="confirm" class="return_btn py-2 px-4 rounded focus:outline-none focus:shadow-outline">Request</button>
     </div>
 </form>
 </section>
