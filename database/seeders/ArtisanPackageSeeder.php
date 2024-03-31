@@ -18,20 +18,28 @@ class ArtisanPackageSeeder extends Seeder
             'package_id' => 1,
         ]);
         DB::table('artisan_package')->insert([
-            'artisan_id' => 2,
-            'package_id' => 1,
+            'artisan_id' => 1,
+            'package_id' => 2,
         ]);
         DB::table('artisan_package')->insert([
-            'artisan_id' => 3,
-            'package_id' => 1,
+            'artisan_id' => 2,
+            'package_id' => 2,
         ]);
         DB::table('artisan_package')->insert([
             'artisan_id' => 4,
-            'package_id' => 2,
+            'package_id' => 3,
+        ]);
+        DB::table('artisan_package')->insert([
+            'artisan_id' => 5,
+            'package_id' => 3,
         ]);
         DB::table('artisan_package')->insert([
             'artisan_id' => 1,
-            'package_id' => 2,
+            'package_id' => 3,
+        ]);
+        DB::table('artisan_package')->insert([
+            'artisan_id' => 2,
+            'package_id' => 3,
         ]);
     }
 }

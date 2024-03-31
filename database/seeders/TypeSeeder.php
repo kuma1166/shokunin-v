@@ -19,18 +19,18 @@ class TypeSeeder extends Seeder
             'image' => 'dummy',
         ]);
         Type::create([
-            'name' => 'GEIKO',
+            'name' => 'GEISHA',
             'icon' => 'icon_dummy',
             'image' => 'dummy',
         ]);
         Type::create([
-            'name' => 'MAIKO',
+            'name' => 'SHAMISEN',
             'icon' => 'icon_dummy',
             'image' => 'dummy',
 
         ]);
         Type::create([
-            'name' => 'SHAMISEN',
+            'name' => 'KATANA',
             'icon' => 'icon_dummy',
             'image' => 'dummy',
         ]);

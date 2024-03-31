@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artisan;
+use App\Models\SushiArtisan;
 use App\Models\Package;
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -15,6 +16,12 @@ class PackageController extends Controller
      */
     public function index()
     {
+        $artisans = Artisan::orderBy('id')
+            ->get();
+
+        $sushi_artisans = SushiArtisan::orderBy('id')
+            ->get();
+
         $types = Type::orderBy('id')
             ->get();
 
@@ -62,7 +69,7 @@ class PackageController extends Controller
             ->orderByRaw('packages.id , types.id asc')
             ->get();
 
-        return view('index', compact('types', 'recommends', 'recommendTypes', 'packages', 'packageTypes'));
+        return view('index', compact('artisans', 'sushi_artisans', 'types', 'recommends', 'recommendTypes', 'packages', 'packageTypes'));
     }
 
     /**
@@ -89,6 +96,8 @@ class PackageController extends Controller
         $packageArtisans = Package::with('get_artisans')->find($package->id);
         $artisans = $packageArtisans->get_artisans;
 
+        $sushi_artisans = SushiArtisan::select('id', 'name')->get();
+
         $artisanIds = array();
         for ($i = 0; $i < count($artisans); $i++) {
             $artisanIds[] = $artisans[$i]->id;
@@ -101,7 +110,7 @@ class PackageController extends Controller
             ->select('types.name', 'types.icon', 'types.image')
             ->get();
 
-        return view('show', compact('package', 'artisanTypes'));
+        return view('show', compact('package', 'sushi_artisans', 'artisanTypes'));
     }
 
     /**
