@@ -173,31 +173,6 @@ class PackageController extends Controller
         return view('search', compact('packages', 'packageTypes', 'resultCnt', 'request'));
     }
 
-    public function decision($package_id, $sushi_artisan_id)
-    {
-        $sushi_artisan_row = SushiArtisan::findOrFail($sushi_artisan_id);
-        $package = Package::find($package_id);
-        $packageArtisans = Package::with('get_artisans')->find($package_id);
-        $artisans = $packageArtisans->get_artisans;
-
-        $sushi_artisans = SushiArtisan::select('id', 'name')->get();
-
-        $artisanIds = array();
-        for ($i = 0; $i < count($artisans); $i++) {
-            $artisanIds[] = $artisans[$i]->id;
-        }
-        $artisanTypes = DB::table('artisans')
-            ->whereIn('artisans.id', $artisanIds)
-            ->join('artisan_type', 'artisan_type.artisan_id', '=', 'artisans.id')
-            ->join('types', 'types.id', '=', 'artisan_type.type_id')
-            ->distinct()
-            ->select('types.name', 'types.icon', 'types.image')
-            ->get();
-
-        return view('show', compact('package', 'sushi_artisan_row', 'sushi_artisans', 'artisanTypes'));
-    }
-
-
     public function check(Package $package)
     {
         //

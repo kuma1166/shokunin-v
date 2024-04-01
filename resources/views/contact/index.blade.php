@@ -98,6 +98,14 @@
             @endif
         </div>
 
+        <div class="mb-4">
+            <label for="upload" class="block text-gray-700 text-sm font-bold mb-2">Photos of WOW experiences</label>
+            <form method="POST" action="{{ route('contact.upload') }}" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="image">
+            </form>
+        </div>
+
         <div class="flex items-center justify-between">
             <button type="submit" name="submitBtnVal" value="confirm" class="return_btn py-2 px-4 rounded focus:outline-none focus:shadow-outline">Confirmation</button>
         </div>
