@@ -13,8 +13,13 @@
         <div class="text-xs py-2 leading-6">{!! nl2br(e($sushi_artisan->career)) !!}</div>
     </div>
 
-    <div class="reserve_btn pb-12 text-center">
+    <div class="reserve_btn pb-12 flex justify-around">
         <button onclick="window.history.back(); return false;" class="px-16 py-3">Return</button>
+        <form
+            action="{{ route('packages.decision', ['package_id' => $package_id, 'sushi_artisan_id' => $sushi_artisan->id]) }}"
+            method="get">
+            <button type="submit" class="px-16 py-3">Decision</button>
+        </form>
     </div>
 
 </x-app-layout>
