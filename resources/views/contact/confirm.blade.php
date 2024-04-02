@@ -1,7 +1,5 @@
 <x-app-layout>
 <form action="{{ route('contact.complete') }}" method="POST">
-@csrf
-<form action="{{ route('contact.complete') }}" method="POST">
     @csrf
     <input type="hidden" name="date" value="{{ $date }}">
     <input type="hidden" name="number" value="{{ $number }}">
@@ -12,6 +10,7 @@
     <input type="hidden" name="description" value="{{ $description }}">
     <input type="hidden" name="plan" value="{{ $plan }}">
     <input type="hidden" name="sushiArtisanName" value="{{ $sushiArtisanName }}">
+    <input type="hidden" name="body" value="{{ $data['body'] }}">
 
 <section class="max-w-4xl mx-auto p-5 rounded-lg">
     <h2 class="flex items-center justify-center text-xl font-semibold mb-4">Confirmation Screen</h2>
