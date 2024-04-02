@@ -1,4 +1,3 @@
-
 <x-app-layout>
     <div class="sushi-artisan-detail">
         <img src="{{ asset('storage/' . $sushi_artisan->image2) }}" alt="寿司職人の画像">
@@ -14,8 +13,11 @@
         <div class="text-xs py-2 leading-6">{!! nl2br(e($sushi_artisan->career)) !!}</div>
     </div>
 
-    <div class="reserve_btn pb-12 text-center">
-        <button onclick="window.history.back(); return false;" class="px-16 py-3">Return</button>
-    </div>
+<div class="pb-12 flex justify-center space-x-4 px-6">
+    <button onclick="window.history.back(); return false;" class="return_btn px-16 py-3">Return</button>
+    <form action="{{ route('packages.decision', ['package_id' => $package_id, 'sushi_artisan_id' => $sushi_artisan->id]) }}" method="get">
+        <button type="submit" class="return_btn px-16 py-3">Decision</button>
+    </form>
+</div>
 
 </x-app-layout>
