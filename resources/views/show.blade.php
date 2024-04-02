@@ -41,6 +41,7 @@
             @endforeach
         </select>
     </div> --}}
+    
 @if(isset($sushi_artisan_row))
     <div class="artisan-area flex my-4 py-4 px-3">
         <div class="w-1/3">
