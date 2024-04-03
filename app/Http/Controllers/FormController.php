@@ -38,6 +38,7 @@ class FormController extends Controller
         $image = $request->input('image');
         $description = $request->input('description');
         $plan = $request->input('plan');
+        $sushiArtisanName = $request->input('sushiArtisanName');
         // $sushiArtisanId = $request->input('sushi_artisan_name');
 
         return view('contact.confirm', [
@@ -50,7 +51,7 @@ class FormController extends Controller
             'image' => $image,
             'description' => $description,
             'plan' => $plan,
-            'sushiArtisanName' => $request->input('sushi_artisan_name'),
+            'sushiArtisanName' => $sushiArtisanName,
         ]);
     }
 
@@ -94,7 +95,6 @@ class FormController extends Controller
     public function complete(Request $request)
     {
         $data = $request->all();
-
         Mail::to($request->user()->email)->send(new UserConfirmationMail($data));
         // Mail::to($request->user())->send(new UserConfirmationMail($data));
         // Mail::to('shokunin.lab16@gmail.com')->send(new AdminNotificationMail($data));

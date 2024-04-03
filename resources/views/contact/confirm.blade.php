@@ -10,6 +10,12 @@
     <input type="hidden" name="description" value="{{ $description }}">
     <input type="hidden" name="plan" value="{{ $plan }}">
     <input type="hidden" name="sushiArtisanName" value="{{ $sushiArtisanName }}">
+    <input type="hidden" name="company" value="{{ $data['company'] }}">
+    <input type="hidden" name="FirstName" value="{{ $data['FirstName'] }}">
+    <input type="hidden" name="LastName" value="{{ $data['LastName'] }}">
+    <input type="hidden" name="phone" value="{{ $data['phone'] }}">
+    <input type="hidden" name="email" value="{{ $data['email'] }}">
+    <input type="hidden" name="allergy" value="{{ $data['allergy'] }}">
     <input type="hidden" name="body" value="{{ $data['body'] }}">
 
 <section class="max-w-4xl mx-auto p-5 rounded-lg">

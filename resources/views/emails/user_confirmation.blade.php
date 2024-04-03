@@ -1,43 +1,35 @@
 <x-mail::message>
-# Thank you for your tentative reservation for SHOKUNIN
-Hello,
+Hello,<br>
+Thank you for using our service. Your reservation for the package has been provisionally completed.<br>
+Below are the details:<br>
 
-Thank you for using our service.
-Your reservation for the package has been provisionally completed.
+=================================================<br>
+Package Name：{{ $data['packageName']  }}<br>
+Adult Price：{{ $data['adultPrice'] }}<br>
+Child Price：{{ $data['childPrice'] }}<br>
+Description：{{ $data['description'] }}<br>
+Plan：{!! nl2br(e($data['plan'])) !!}<br>
+Sushi Chef：{{ $data['sushiArtisanName'] }}<br>
+Date：{{ $data['date'] }}<br>
+Number of participants：{{ $data['number'] }}<br>
+Company：{{ $data['company'] ?? 'N/A'  }}<<br>
+Your name：{{ $data['FirstName'] }} {{ $data['LastName'] }}<br>
+Phone number：{{ $data['phone'] ?? 'N/A' }}<br>
+E-mail address：{{ $data['email'] }}<br>
+Allergy：{{ $data['allergy'] ?? 'N/A' }}<br>
+Requests, etc.：{{ $data['body'] ?? 'N/A'  }}<br>
+=================================================<br>
 
-Below are the details:
-
-Package Name:{{ $data['packageName'] }}<br>
-Date:{{ $data['date'] }}<br>
-Number of Participants:{{ $data['number'] }}<br>
-Request:{{ $data['body'] }}<br>
+Within 24 hours, our SHOKUNIN concierge will propose a unique WOW experience plan for you.<br>
+If you have any questions or concerns, please feel free to contact us.<br>
+Thank you for your reservation.<br>
+Sincerely, SHOKUNIN, Inc.<br>
 
 
-Within 24 hours, our SHOKUNIN concierge will propose a unique WOW experience plan for you.
-
-If you have any questions or concerns, please feel free to contact us.
-
-Thank you for your reservation.
-
-Sincerely,
-SHOKUNIN, Inc.
-{{--
-- パッケージ名: {{ $data['packageName'] }}
-- 大人の価格: {{ $data['adultPrice'] }} JPY
-- 子供の価格: {{ $data['childPrice'] }} JPY
-- 日付: {{ $data['date'] }}
-- 人数: {{ $data['number'] }} --}}
-
-{{-- - パッケージ名: {{ $packageName }}
-- 大人の価格: {{ $adultPrice }} JPY
-- 子供の価格: {{ $childPrice }} JPY
-- 日付: {{ $date }}
-- 人数: {{ $number }} --}}
-
-{{-- <x-mail::button :url="">
+{{--<x-mail::button :url="">
 予約詳細を見る
-</x-mail::button> --}}
+</x-mail::button>
 
 Thanks,<br>
-{{ config('app.name') }}
+{{ config('app.name') }} --}}
 </x-mail::message>
