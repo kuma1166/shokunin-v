@@ -4,13 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-// use App\Http\Requests\ContactFormRequest;
-// use App\Mail\ContactFormAdminMail;
-// use App\Mail\ContactFormUserMail;
+use Illuminate\Support\Facades\Session;
 use App\Mail\UserConfirmationMail;
 use App\Mail\AdminNotificationMail;
-
-
 
 class FormController extends Controller
 {
@@ -57,6 +53,42 @@ class FormController extends Controller
             'sushiArtisanName' => $request->input('sushi_artisan_name'),
         ]);
     }
+
+    // 画像アップロードの処理
+    // public function uploadImage(Request $request)
+    // {
+    //     if ($request->hasFile('image')) {
+    //         $filename = $request->image->getClientOriginalName();
+    //         $request->image->storeAs('images', $filename, 'public');
+    //         return redirect()->back()->with('message', '画像がアップロードされました。');
+    //     }
+    //     return redirect()->back()->with('error', '画像のアップロードに失敗しました。');
+    // }
+
+        public function uploadImage(Request $request)
+        {
+        if ( $request->hasFile('image')) {
+            $filename = $request->image->getClientOriginalName();
+            $request->image->storeAs('images', $filename, 'public');
+            Session::put('img_name', $filename); // セッションにファイル名を保存
+            return redirect()->back()->with('message', '画像がアップロードされました。');
+        }
+        return redirect()->back()->with('error', '画像のアップロードに失敗しました。');
+    }
+
+
+    // /**
+    //  * 画面表保存
+    //  */
+    // public function imagePost(Request $req)
+    // {
+    //     $file = $req->file('img');
+    //     $file_path = $file->store('public');
+    //     Session::put('img_path', $file_path);
+    //     return redirect()->route('index');
+    // }
+
+
 
     // サンクスページ
     public function complete(Request $request)

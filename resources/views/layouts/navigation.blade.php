@@ -26,13 +26,13 @@
 
 <!-- ナビゲーションメニュー -->
 <nav id="navMenu" class="hidden lg:flex lg:items-center lg:w-auto">
-    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">About</a>
-    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Services</a>
-    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Contact</a>
+    <a href="#" class="block px-4 py-2 text-gray-700 text-[#b9a157] hover:bg-gray-200">About</a>
+    <a href="#" class="block px-4 py-2 text-gray-700 text-[#b9a157] hover:bg-gray-200">Services</a>
+    <a href="#" class="block px-4 py-2 text-gray-700 text-[#b9a157] hover:bg-gray-200">Contact</a>
     <form id="logoutForm" method="POST" action="{{ route('logout') }}">
         @csrf
     </form>
-    <a href="#" onclick="document.getElementById('logoutForm').submit();" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Logout</a>
+    <a href="#" onclick="document.getElementById('logoutForm').submit();" class="block px-4 py-2 text-gray-700 text-[#b9a157] hover:bg-gray-200">Logout</a>
 </nav>
 
 </header>
