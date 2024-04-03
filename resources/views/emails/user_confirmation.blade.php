@@ -7,10 +7,10 @@ Your reservation for the package has been provisionally completed.
 
 Below are the details:
 
-Package Name:
-Date:
-Number of Participants:
-Request:
+Package Name:{{ $data['packageName'] }}<br>
+Date:{{ $data['date'] }}<br>
+Number of Participants:{{ $data['number'] }}<br>
+Request:{{ $data['body'] }}<br>
 
 
 Within 24 hours, our SHOKUNIN concierge will propose a unique WOW experience plan for you.
