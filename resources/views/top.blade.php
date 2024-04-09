@@ -19,7 +19,7 @@
         <div class="h-1/3 top-color-red"></div>
 
         <div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <img src="{{ url('/storage/logo1.png') }}" class="w-30 h-30 rounded-full" alt="logo">
+                <img src="{{ url('/storage/newlogo.png') }}" class="w-14 h-14 rounded-full" alt="logo">
         </div>
 
         <div class="maintop-image" style="background-image: url({{ url('/storage/shutterstock_1543757588.jpg') }})">
