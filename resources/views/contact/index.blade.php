@@ -22,6 +22,7 @@
         <input type="hidden" name="image" value="{{ request('image') }}">
         <input type="hidden" name="description" value="{{ request('description') }}">
         <input type="hidden" name="plan" value="{{ request('plan') }}">
+        <input type="hidden" name="sushiArtisanName" value="{{ request('sushiArtisanName') }}">
 
         {{-- 入力フォーム --}}
         <div class="mb-4">

@@ -41,8 +41,14 @@
             @endforeach
         </select>
     </div> --}}
+@php
+    $sushiArtisanName = "";
+@endphp
     
 @if(isset($sushi_artisan_row))
+    @php
+        $sushiArtisanName = $sushi_artisan_row->name;
+    @endphp
     <div class="artisan-area flex my-4 py-4 px-3">
         <div class="w-1/3">
             <img src="{{ asset('storage/' . $sushi_artisan_row->image) }}" alt="">
@@ -95,6 +101,7 @@
                     'image' => $package->image,
                     'description' => $package->description,
                     'plan' => $package->plan,
+                    'sushiArtisanName' => $sushiArtisanName 
                 ]) }}">
                 <button type="button" class="return_btn px-16 py-3">Reserve</button>
             </a>
