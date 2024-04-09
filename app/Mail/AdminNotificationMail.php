@@ -13,14 +13,20 @@ class AdminNotificationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data; // プロパティの追加
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
+    public function build()
+    {
+        return $this->markdown('emails.admin_notification')
+                    ->with('data', $this->data);
+    }
     /**
      * Get the message envelope.
      */

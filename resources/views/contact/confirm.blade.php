@@ -1,7 +1,5 @@
 <x-app-layout>
 <form action="{{ route('contact.complete') }}" method="POST">
-@csrf
-<form action="{{ route('contact.complete') }}" method="POST">
     @csrf
     <input type="hidden" name="date" value="{{ $date }}">
     <input type="hidden" name="number" value="{{ $number }}">
@@ -12,6 +10,13 @@
     <input type="hidden" name="description" value="{{ $description }}">
     <input type="hidden" name="plan" value="{{ $plan }}">
     <input type="hidden" name="sushiArtisanName" value="{{ $sushiArtisanName }}">
+    <input type="hidden" name="company" value="{{ $data['company'] }}">
+    <input type="hidden" name="FirstName" value="{{ $data['FirstName'] }}">
+    <input type="hidden" name="LastName" value="{{ $data['LastName'] }}">
+    <input type="hidden" name="phone" value="{{ $data['phone'] }}">
+    <input type="hidden" name="email" value="{{ $data['email'] }}">
+    <input type="hidden" name="allergy" value="{{ $data['allergy'] }}">
+    <input type="hidden" name="body" value="{{ $data['body'] }}">
 
 <section class="max-w-4xl mx-auto p-5 rounded-lg">
     <h2 class="flex items-center justify-center text-xl font-semibold mb-4">Confirmation Screen</h2>
@@ -49,10 +54,10 @@
     </div>
 
 
-    <div>
+    {{-- <div>
     <h2>Sushi chef</h2>
     <p>{{ $sushiArtisanName }}</p>
-</div>
+</div> --}}
 
 </div>
     <table class="table-auto w-full">
@@ -92,7 +97,7 @@
         </tbody>
     </table>
     <div class="flex items-center justify-between py-8">
-        <button type="submit" name="submitBtnVal" value="confirm" class="return_btn py-2 px-4 rounded focus:outline-none focus:shadow-outline">Checkout</button>
+        <button type="submit" name="submitBtnVal" value="confirm" class="return_btn py-2 px-4 rounded focus:outline-none focus:shadow-outline">Request</button>
     </div>
 </form>
 </section>

@@ -22,6 +22,7 @@
         <input type="hidden" name="image" value="{{ request('image') }}">
         <input type="hidden" name="description" value="{{ request('description') }}">
         <input type="hidden" name="plan" value="{{ request('plan') }}">
+        <input type="hidden" name="sushiArtisanName" value="{{ request('sushiArtisanName') }}">
 
         {{-- 入力フォーム --}}
         <div class="mb-4">
@@ -97,6 +98,15 @@
             <p class="text-red-500 text-xs italic">{{ $errors->first('body') }}</p>
             @endif
         </div>
+        
+{{--
+        <div class="mb-4">
+            <label for="upload" class="block text-gray-700 text-sm font-bold mb-2">Photos of WOW experiences</label>
+            <form method="POST" action="{{ route('contact.upload') }}" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="image">
+            </form>
+        </div> --}}
 
         <div class="flex items-center justify-between">
             <button type="submit" name="submitBtnVal" value="confirm" class="return_btn py-2 px-4 rounded focus:outline-none focus:shadow-outline">Confirmation</button>

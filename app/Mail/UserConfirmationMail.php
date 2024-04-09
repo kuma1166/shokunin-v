@@ -14,17 +14,17 @@ class UserConfirmationMail extends Mailable
     use Queueable, SerializesModels;
 
 
-    public $packageName; // プロパティの追加
+    public $data; // プロパティの追加
 
-    public function __construct($packageName) // コンストラクタの修正
+    public function __construct($data) // コンストラクタの修正
     {
-        $this->packageName = $packageName;
+        $this->data = $data;
     }
 
     public function build()
     {
         return $this->markdown('emails.user_confirmation')
-                    ->with('packageName', $this->packageName);
+                    ->with('data', $this->data);
     }
 
     public function envelope(): Envelope
